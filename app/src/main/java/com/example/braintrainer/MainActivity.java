@@ -42,12 +42,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTick(long l) {
                 timerTextView.setText(String.valueOf(l/1000+ "s"));
+                button0.setEnabled(true);
+                button1.setEnabled(true);
+                button2.setEnabled(true);
+                button3.setEnabled(true);
+
+
             }
 
             @Override
             public void onFinish() {
                 ansTextView.setText("Game Over!");
                 PlayAgain.setVisibility(View.VISIBLE);
+                button0.setEnabled(false);
+                button1.setEnabled(false);
+                button2.setEnabled(false);
+                button3.setEnabled(false);
 
             }
         }.start();
